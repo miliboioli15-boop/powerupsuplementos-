@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerUp | Energía que Impulsa tus Metas</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Google Fonts (Montserrat para títulos, Inter para cuerpo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Definición de la paleta de colores de PowerUp */
+        :root {
+            --color-black: #0b0b0b;
+            --color-orange: #ff9f1c;
+            --color-white: #ffffff;
+            --color-whatsapp: #25D366;
+        }
+
+        /* Aplicar las tipografías */
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Estilos personalizados para el header y secciones */
+        .bg-powerup-black {
+            background-color: var(--color-black);
+        }
+        .text-powerup-orange {
+            color: var(--color-orange);
+        }
+        .border-powerup-orange {
+            border-color: var(--color-orange);
+        }
+
+        /* Estilo para el botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-whatsapp);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Efecto de fondo en el Hero para darle profundidad */
+        .hero-background {
+            background-image: url('https://placehold.co/1200x800/0b0b0b/ffffff?text=Suplementos+de+Calidad');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Pequeño efecto parallax */
+        }
+    </style>
+</head>
+<body class="bg-powerup-black font-inter text-white">
+
+    <!-- BOTÓN DE WHATSAPP FLOTANTE (Fijo) -->
+    <a href="https://wa.me/5491159613568?text=Hola%20PowerUp!%20Quiero%20el%20catálogo%20completo" 
+       target="_blank" 
+       class="whatsapp-float" 
+       title="Pedí el catálogo completo por WhatsApp">
+        <!-- Ícono simple de WhatsApp -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 0C5.378 0 0 5.385 0 12.031c0 2.103.57 4.14 1.637 5.945L.055 24l6.09-1.614c1.78.966 3.79 1.51 5.886 1.51 6.652 0 12.031-5.385 12.031-12.031C24.117 5.385 18.738 0 12.031 0zm.043 2.158c5.448 0 9.873 4.43 9.873 9.873 0 5.448-4.425 9.873-9.873 9.873-1.97 0-3.923-.58-5.59-1.688l-.396-.237-4.102 1.085 1.054-3.987-.257-.407c-1.12-1.782-1.716-3.83-1.716-5.967 0-5.443 4.43-9.873 9.873-9.873zm-4.75 6.444c-.267-.008-.387-.1-.53-.122s-.308-.005-.472-.008c-.164-.002-.423-.005-.646.262-.224.27-.852.83-.852 2.025 0 1.196.877 2.34 1.002 2.503.125.163 1.737 2.656 4.194 3.633 2.457.977 2.457.65 2.903.606.445-.044 1.402-.533 1.6-.948.198-.415.198-.77.137-.948-.061-.178-.224-.26-.472-.387-.247-.127-1.458-.72-1.681-.83-.224-.11-.387-.163-.53-.163s-.267.054-.41.163c-.143.11-.55.67-.675.83-.125.163-.25.185-.473.064s-1.92-1.738-2.34-2.888c-.125-.33-.005-.515.093-.687.087-.152.193-.26.29-.364.098-.103.193-.163.29-.267.098-.103.048-.198-.014-.308-.061-.11-.53-.83-.728-1.196-.198-.367-.396-.313-.55-.313z"/>
+        </svg>
+    </a>
+
+    <!-- ENCABEZADO / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-powerup-black border-b border-gray-800 shadow-xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo de la Marca -->
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl sm:text-3xl font-montserrat font-extrabold">⚡</span>
+                <span class="text-2xl sm:text-3xl font-montserrat font-extrabold text-white">Power</span>
+                <span class="text-2xl sm:text-3xl font-montserrat font-extrabold text-powerup-orange">Up</span>
+            </div>
+            <!-- Frase Motivadora (Oculta en móviles, visible en desktop) -->
+            <p class="hidden md:block text-sm font-inter text-gray-400 tracking-wider">
+                Energía que impulsa tus metas
+            </p>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL (HERO SECTION) -->
+    <section id="inicio" class="hero-background min-h-screen flex items-center justify-center text-center p-4">
+        <div class="bg-black bg-opacity-70 p-8 sm:p-12 rounded-xl max-w-4xl mx-auto shadow-2xl border-2 border-powerup-orange/50 backdrop-blur-sm">
+            <!-- Título principal -->
+            <h1 class="font-montserrat text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 text-white leading-tight">
+                ¡Potencia tu Rendimiento al Máximo!
+            </h1>
+            <!-- Texto breve -->
+            <p class="font-inter text-lg sm:text-2xl text-gray-200 mb-10">
+                Descubrí suplementos de calidad para alcanzar tus objetivos de <span class="text-powerup-orange font-bold">fitness, salud y bienestar</span>.
+            </p>
+            
+            <!-- Botón de WhatsApp CTA Principal -->
+            <a href="https://wa.me/5491159613568?text=Hola%20PowerUp!%20Quiero%20el%20catálogo%20completo" 
+               target="_blank" 
+               class="inline-block bg-[#25D366] hover:bg-[#1DA95A] text-white font-montserrat text-lg sm:text-2xl font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-2xl">
+                📲 Pedí el catálogo completo por WhatsApp
+            </a>
+            <!-- Nota de urgencia/confianza -->
+            <p class="mt-4 text-sm text-gray-400 italic">Respuesta inmediata. ¡Comenzá a transformar tu energía hoy!</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE BENEFICIOS (3 COLUMNAS) -->
+    <section id="beneficios" class="py-20 bg-powerup-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat text-3xl sm:text-4xl font-bold text-center mb-16 text-powerup-orange">
+                ¿Por Qué Elegir PowerUp?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Beneficio 1: Energía Inmediata -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-xl border-t-4 border-powerup-orange text-center transform hover:scale-[1.02] transition duration-300">
+                    <div class="text-powerup-orange text-5xl mb-4">⚡</div>
+                    <h3 class="font-montserrat text-xl font-bold mb-3 text-white">Energía Inmediata</h3>
+                    <p class="font-inter text-gray-300">Fórmulas diseñadas para darte ese impulso extra que necesitas, justo cuando lo pedís. Sentí la diferencia desde el primer servicio.</p>
+                </div>
+
+                <!-- Beneficio 2: Calidad Probada -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-xl border-t-4 border-powerup-orange text-center transform hover:scale-[1.02] transition duration-300">
+                    <div class="text-powerup-orange text-5xl mb-4">✅</div>
+                    <h3 class="font-montserrat text-xl font-bold mb-3 text-white">Calidad Probada</h3>
+                    <p class="font-inter text-gray-300">Trabajamos solo con materias primas de primera línea y procesos certificados. Tu salud y seguridad son nuestra máxima prioridad.</p>
+                </div>
+
+                <!-- Beneficio 3: Asesoramiento Personalizado -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-xl border-t-4 border-powerup-orange text-center transform hover:scale-[1.02] transition duration-300">
+                    <div class="text-powerup-orange text-5xl mb-4">🧑‍💻</div>
+                    <h3 class="font-montserrat text-xl font-bold mb-3 text-white">Asesoramiento Personalizado</h3>
+                    <p class="font-inter text-gray-300">Recibí la guía de expertos para elegir los suplementos ideales según tus metas específicas. ¡Escribinos por WhatsApp!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section id="testimonios" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat text-3xl sm:text-4xl font-bold text-center mb-16 text-white">
+                Nuestros Clientes Nos Impulsan
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonio 1 -->
+                <div class="bg-powerup-black p-6 rounded-xl border border-powerup-orange/50 shadow-lg">
+                    <p class="italic text-lg text-gray-200 mb-4">"¡Excelente atención y productos de calidad! Noto la diferencia en mis entrenamientos desde que empecé con PowerUp."</p>
+                    <p class="font-inter font-semibold text-powerup-orange">- Mariana P.</p>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-powerup-black p-6 rounded-xl border border-powerup-orange/50 shadow-lg">
+                    <p class="italic text-lg text-gray-200 mb-4">"El asesoramiento que me dieron fue clave para elegir lo que realmente necesitaba. Mis pedidos siempre llegan rápido."</p>
+                    <p class="font-inter font-semibold text-powerup-orange">- Juan M.</p>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-powerup-black p-6 rounded-xl border border-powerup-orange/50 shadow-lg">
+                    <p class="italic text-lg text-gray-200 mb-4">"Súper fácil hacer el pedido por WhatsApp. Son mi marca de confianza en suplementación."</p>
+                    <p class="font-inter font-semibold text-powerup-orange">- Sofía R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section id="nosotros" class="py-20 bg-powerup-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat text-3xl sm:text-4xl font-bold text-center mb-12 text-powerup-orange">
+                Nuestra Misión: Impulsarte a Lograrlo
+            </h2>
+            <div class="md:flex md:items-center md:space-x-12">
+                
+                <!-- Foto de Equipo/Fundadora (Placeholder) -->
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <img src="https://placehold.co/400x400/ff9f1c/0b0b0b?text=Equipo+PowerUp" 
+                         alt="Foto de la fundadora/equipo de PowerUp" 
+                         class="rounded-xl object-cover w-full h-auto shadow-2xl border-4 border-powerup-orange/70">
+                </div>
+                
+                <!-- Texto y Valores -->
+                <div class="md:w-2/3">
+                    <p class="font-inter text-lg text-gray-300 mb-6">
+                        Fundamos **PowerUp** con la misión de ser más que una marca de suplementos; somos tus *partners* en el camino hacia tus metas. Entendemos que el progreso requiere dedicación y la nutrición correcta.
+                    </p>
+                    <h3 class="font-montserrat text-2xl font-bold text-white mb-4">Nuestros Valores Fundamentales:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300 text-lg ml-4">
+                        <li class="hover:text-powerup-orange transition duration-200">✨ <span class="font-bold">Salud:</span> Priorizamos tu bienestar con productos seguros.</li>
+                        <li class="hover:text-powerup-orange transition duration-200">🚀 <span class="font-bold">Energía:</span> Te damos el combustible para superar tus límites.</li>
+                        <li class="hover:text-powerup-orange transition duration-200">🤝 <span class="font-bold">Confianza:</span> Transparencia total en ingredientes y procesos.</li>
+                        <li class="hover:text-powerup-orange transition duration-200">🔥 <span class="font-bold">Motivación:</span> Inspiramos la disciplina y la consistencia diaria.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y CONTACTO -->
+    <footer id="contacto" class="py-12 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <h3 class="font-montserrat text-3xl font-bold text-white mb-6">¡Hablemos de tus Metas!</h3>
+            
+            <!-- Botón de WhatsApp CTA Final -->
+            <a href="https://wa.me/5491159613568?text=Hola%20PowerUp!%20Quiero%20el%20catálogo%20completo" 
+               target="_blank" 
+               class="inline-block bg-[#25D366] hover:bg-[#1DA95A] text-white font-montserrat text-xl font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-xl mb-8">
+                📲 Pedí tu Catálogo Ahora
+            </a>
+
+            <!-- Redes Sociales -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com" target="_blank" class="text-powerup-orange hover:text-white transition duration-200 text-4xl" aria-label="Instagram de PowerUp">
+                    <!-- Placeholder SVG para Instagram -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.435.202-6.791 2.589-7.002 7.002-.058 1.281-.073 1.689-.073 4.947 0 3.259.014 3.668.073 4.947.202 4.434 2.589 6.791 7.002 7.002 1.28.058 1.688.072 4.947.072 3.259 0 3.668-.014 4.947-.072 4.435-.201 6.791-2.589 7.002-7.002.058-1.28.072-1.689.072-4.947 0-3.259-.014-3.667-.072-4.947-.201-4.435-2.589-6.791-7.002-7.002-1.281-.058-1.689-.073-4.947-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.44-.645 1.44-1.44-.644-1.44-1.44-1.44z"/>
+                    </svg>
+                </a>
+                <!-- TikTok Icon -->
+                <a href="https://www.tiktok.com" target="_blank" class="text-powerup-orange hover:text-white transition duration-200 text-4xl" aria-label="TikTok de PowerUp">
+                    <!-- Placeholder SVG para TikTok -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.638 7.01A5.023 5.023 0 0 1 19 8a5.023 5.023 0 0 1-5-5h-3v8.006a1.006 1.006 0 0 1-1.005 1.005 1.006 1.006 0 0 1-1.005-1.005V5H8a5.023 5.023 0 0 0-5 5v4.004a5.004 5.004 0 0 0 5 5h4.004a5.004 5.004 0 0 0 5-5v-4.996h-3.362z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <p class="font-inter text-sm text-gray-500">PowerUp © 2024. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
